@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <title>DFT</title>
+</head>
+<body>
+    <!--Nav bar-->
+    <nav>
+        <div class="nav-wrapper">
+        <a class="brand-logo">FFT/IFFT</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#">:)</a></li>
+        </ul>
+        </div>
+    </nav>
+    <!--Nav bar-->
+
+    <form action="#">
+        <div class="row">
+            <!-- Instrucctions -->
+            <div class="col l1"></div>
+            <div class="col s12 l3 grey lighten-3 card-panel">
+                <div class="row">
+                    <div class="col s12">
+                        <p>Instrucciones: 
+                        <p>1-Ingresa solo numeros separados por comas. El origen es señalado por un *.</p>
+                        <p>2-Selecciona si quieres hacer FFT o IFFT.</p>
+                        <p>3-Finalmente haz click en calcular.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Instrucctions -->
+
+            <!--Controls -->
+            <div class="col l1"></div>
+            <div class="col s12 l6 card-panel">
+                <div class="container">
+                    <div class="col s12">
+                        Secuencia de entrada:
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">8,8,8*,8,2</label>
+                    </div>
+
+                    <div class="col s6">
+                        <label>
+                            <input name="group1" type="radio" checked />
+                            <span>FFT</span>
+                        </label>
+                    </div>
+                    <div class="col s6">
+                        <label>
+                            <input name="group1" type="radio"/>
+                            <span>IFFT</span>
+                        </label>
+                    </div>
+                    <div class="col s12"></div>
+                    <div class="col s6">
+                        <a class="waves-effect waves-light btn">Calcular c:</a>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="first_name" type="text" class="validate" disabled="disabled">
+                        <label for="first_name">Resultado</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+
+
+
+
+        </div>
+    </form>
+</body>
+</html>
