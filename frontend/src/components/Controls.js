@@ -7,7 +7,7 @@ export const Controls = () => {
         e.preventDefault();
         const sec = document.getElementById('secuencia').value;
         const ope = document.getElementById('operacion').value;
-        const res = await fetch(`/api/calculate`, {
+        const res = await fetch(`https://fft-calculator.herokuapp.com/api/calculate`, {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
