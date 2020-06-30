@@ -4,7 +4,7 @@ from flask_cors import CORS
 import numpy as np
 from scipy import fft as fft
 
-app = Flask(__name__, static_folder='../../build/', static_url_path='/')
+app = Flask(__name__, static_folder='../build/', static_url_path='/')
 
 CORS(app)
 
