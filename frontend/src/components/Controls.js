@@ -1,6 +1,6 @@
 import React from 'react'
 
-const api = process.env.API_URL
+const api = process.env.API_URL;
 
 export const Controls = () => {
 
@@ -8,7 +8,7 @@ export const Controls = () => {
         e.preventDefault();
         const sec = document.getElementById('secuencia').value;
         const ope = document.getElementById('operacion').value;
-        const res = await fetch('${api}/api/calculate', {
+        const res = await fetch(`${api}/api/calculate`, {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
