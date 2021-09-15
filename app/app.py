@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 
 import numpy as np
 from scipy import fft as fft
 
-app = Flask(__name__, static_folder='../build/', static_url_path='/')
-
-CORS(app)
+app = Flask(__name__)
+# app.config['CORS_HEADERS'] = 'Content-Type'
+# cors = CORS(app, origins=["*"], methods= [GET, HEAD, POST, OPTIONS, PUT, PATCH, DELETE]])
 
 def validate_sec(original_sec):
     """ Valida que la secuencia de entrada sea correcta"""
@@ -75,8 +75,9 @@ def get_sequence():
         y = 'La secuencia no es de tamaño n^2 y tampoco esta escrita correctamente'
 
     # Regresa el resultado
-    return jsonify(y)
-    
+    response = jsonify(y)
+    return response
+
 @app.route('/')
 def index():
     return app.send_static_file('index.html')

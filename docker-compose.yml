@@ -1,0 +1,24 @@
+services:
+  frontend:
+    image: front:v2
+    container_name: fftFront
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_API_URL=http://fftBack
+      - REACT_APP_API_PORT=5000
+    networks:
+      - fftNet
+    stdin_open: true
+
+  backend:
+    image: back:v2
+    container_name: fftBack
+    ports:
+      - 5000:5000
+    networks:
+      - fftNet
+
+networks:
+  fftNet:
+    driver: bridge

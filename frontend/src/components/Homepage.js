@@ -1,15 +1,14 @@
-import React from 'react'
-import {Instructions} from './Instructions'
-import {Controls} from './Controls'
+import React from "react";
+import { Instructions } from "./Instructions";
+import { Controls } from "./Controls";
 
 export const Homepage = () => (
-
-<form action="#">
+  <form action="#">
     <main role="main">
-        <div class="container">
-            <Instructions/>
-            <Controls/>
-        </div>
+      <div class="container">
+        <Instructions />
+        <Controls />
+      </div>
     </main>
-</form>
-)
+  </form>
+);
