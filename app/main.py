@@ -5,12 +5,11 @@ import numpy as np
 from scipy import fft as fft
 
 app = Flask(__name__)
-# app.config['CORS_HEADERS'] = 'Content-Type'
-# cors = CORS(app, origins=["*"], methods= [GET, HEAD, POST, OPTIONS, PUT, PATCH, DELETE]])
+cors = CORS(app)
 
 def validate_sec(original_sec):
     """ Valida que la secuencia de entrada sea correcta"""
-    # Lista temporal sin comas 
+    # Lista temporal sin comas
     temp_list = [n for n in original_sec.split (",") if n != '']
     flag = ''
 
@@ -20,7 +19,7 @@ def validate_sec(original_sec):
         flag += '1'
     else:
         flag += '0'
-    
+
 
     # Checar si tiene letras
     flag2 = '1'
@@ -52,7 +51,7 @@ def transform_list(original_list):
 # Obtiene la llamada POST desde el back
 @app.route('/api/calculate', methods=['POST'])
 def get_sequence():
-    '''Obtiene la secuencia desde el Front, hace la operacion y 
+    '''Obtiene la secuencia desde el Front, hace la operacion y
     regresa el resultado '''
     sequence = request.json['sec']
     operation = request.json['ope']
@@ -76,9 +75,14 @@ def get_sequence():
 
     # Regresa el resultado
     response = jsonify(y)
+    response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
 @app.route('/')
 def index():
     return app.send_static_file('index.html')
 
+
+# Corre la aplicacion
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port="80", debug= "true" )

@@ -5,9 +5,9 @@ export const Controls = () => {
     e.preventDefault();
     const sec = document.getElementById("secuencia").value;
     const ope = document.getElementById("operacion").value;
-    const url = `${process.env.REACT_APP_API_URL}:${process.env.REACT_APP_API_PORT}`;
+    const url = `${process.env.REACT_APP_API_URL}`;
     console.log(url);
-    const res = await fetch(`${url}/api/calculate`, {
+    const res = await fetch(`http://${url}/api/calculate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
